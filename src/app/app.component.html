@@ -1,0 +1,33 @@
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a routerLink="" class="nav-link px-2 link-secondary">Главная</a></li>
+      <li><a routerLink="Posts" class="nav-link px-2 link-dark">Красная Площадь</a></li>
+      <li><a routerLink="main" class="nav-link px-2 link-dark">Кижи</a></li>
+      <li><a routerLink="other" class="nav-link px-2 link-dark">Соловецкие острова</a></li>
+      <li><a routerLink="prac" class="nav-link px-2 link-dark">Практика</a></li>
+    </ul>
+    <button (click)="updateLoggedIn()" type="button" class="btn btn-outline-secondary me-2">Update login data</button>
+
+    <div class="col-md-5 text-end" *ngIf="!isLoggedIn; else loggedIn">
+      <a routerLink="login" type="button" class="btn btn-outline-primary me-2">Login</a>
+      <a routerLink="register" type="button" class="btn btn-primary">Registration</a>
+    </div>
+    <ng-template #loggedIn>
+      <p>{{username}}</p>
+      <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+    </ng-template>
+
+  </header>
+  <a href="#top" style="position:fixed;bottom:30px;right:30px">На главную</a>
+  <main class="container">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<p style="color: rgb(121, 3, 91); font-size: 38px; background-color: rgb(240, 255, 36)">Объекты культурного наследия (памятники истории и культуры) народов Российской Федерации -</p>
+<p style="color: rgb(0, 96, 175); font-size: 25px; background-color: rgb(180, 255, 177)">Объекты недвижимого имущества (включая объекты археологического наследия) и иные объекты с исторически связанными с ними территориями, произведениями живописи, скульптуры, декоративно-прикладного искусства, объектами науки и техники и иными предметами материальной культуры.</p>
+<img width="1800" src="https://avatars.mds.yandex.net/i?id=ba7a86debf1023c8767f2de658c92142613afa1c-4462005-images-thumbs&n=13">
+
+
